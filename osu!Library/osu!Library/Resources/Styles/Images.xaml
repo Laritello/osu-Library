@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:osu_Library.Resources.Styles">
+    <Canvas x:Key="CanvasCheck" Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
+        <Viewbox Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
+            <Canvas Width="69.9791" Height="69.9791">
+                <Path Width="38.0321" Height="26.022" Canvas.Left="14.9326" Canvas.Top="22.9394" Stretch="Fill" StrokeThickness="2.00169" StrokeLineJoin="Bevel" Data="F1 M 15.9335,35.9503L 27.9436,47.9605L 51.9639,23.9402">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                    </Path.Stroke>
+                </Path>
+                <Path Width="63.974" Height="63.974" Canvas.Left="3.00254" Canvas.Top="3.00254" Stretch="Fill" StrokeThickness="2.00169" StrokeMiterLimit="2.75" Data="F1 M 65.9757,34.9895C 65.9757,52.124 52.124,65.9757 34.9895,65.9757C 17.8551,65.9757 4.00339,52.124 4.00339,34.9895C 4.00339,17.8551 17.8551,4.00338 34.9895,4.00338C 52.124,4.00338 65.9757,17.8551 65.9757,34.9895 Z ">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                    </Path.Stroke>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </Canvas>
+
+    <Canvas x:Key="CanvasLoading" Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
+        <Viewbox Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
+            <Canvas Width="70.0592" Height="70.0592">
+                <Path Width="32.9879" Height="64.0541" Canvas.Left="3.00254" Canvas.Top="3.00254" Stretch="Fill" StrokeThickness="2.00169" StrokeMiterLimit="2.75" Data="F1 M 34.9895,66.0558C 17.8551,66.0558 4.00339,52.124 4.00339,34.9895C 4.00339,17.8551 17.8551,4.00338 34.9895,4.00338">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                    </Path.Stroke>
+                </Path>
+                <Path Width="33.0679" Height="56.6078" Canvas.Left="33.9887" Canvas.Top="3.00254" Stretch="Fill" StrokeThickness="2.00169" StrokeMiterLimit="2.75" Data="F1 M 54.6061,58.6095L 60.2909,53.0047C 63.8939,47.9605 66.0558,41.7152 66.0558,34.9895C 66.0558,17.8551 52.124,4.00338 34.9895,4.00338">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                    </Path.Stroke>
+                </Path>
+                <Path Width="12.971" Height="12.971" Canvas.Left="53.0448" Canvas.Top="47.0397" Stretch="Fill" StrokeThickness="2.00169" StrokeLineJoin="Bevel" Data="F1 M 65.0149,59.0098L 54.0456,59.0098L 54.0456,48.0406">
+                    <Path.Stroke>
+                        <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                    </Path.Stroke>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </Canvas>
+
+</ResourceDictionary>

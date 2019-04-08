@@ -1,0 +1,25 @@
+﻿<Page x:Class="osu_Library.Pages.PageSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:osu_Library.Pages"
+      xmlns:uc="clr-namespace:osu_Library.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="400"
+      Title="PageSettings">
+    <Grid>
+        <ScrollViewer Margin="0 5 0 5" Height="Auto">
+            <StackPanel Orientation="Vertical" Width="350" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0 0 0 0">
+                <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Settings" />
+                <Label x:Name="LabelSettings" Style="{DynamicResource LabelStyleMenu}" Content="Game Folder"/>
+                <uc:DirectoryPicker x:Name="DirectoryPickerGamePath" SelectedPathChanged="DirectoryPickerGamePath_SelectedPathChanged"/>
+                <Label x:Name="LabelColor" Style="{DynamicResource LabelStyleMenu}" Content="Color"/>
+                <uc:ColorPicker x:Name="ColorPickerMain" SelectedColorChanged="ColorPickerMain_SelectedColorChanged"/>
+                <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="Volume Mode"/>
+                <uc:ToggleSwitch/>
+                <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="Language"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

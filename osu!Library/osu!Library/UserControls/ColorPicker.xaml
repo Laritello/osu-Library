@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="osu_Library.UserControls.ColorPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:osu_Library.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="350" MinHeight="30" MinWidth="350" MaxWidth="350" MaxHeight="200">
+    <UserControl.Resources>
+        <Color x:Key="CurrentColor">#00FF00</Color>
+        
+        <LinearGradientBrush x:Key="HueBrush" StartPoint="0,0" EndPoint="0,1">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Color="#FF0000" Offset="0"/>
+                <GradientStop Color="#FFFF00" Offset="0.167"/>
+                <GradientStop Color="#00FF00" Offset="0.333"/>
+                <GradientStop Color="#00FFFF" Offset="0.5"/>
+                <GradientStop Color="#0000FF" Offset="0.667"/>
+                <GradientStop Color="#FF00FF" Offset="0.833"/>
+                <GradientStop Color="#FF0000" Offset="1"/>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <VisualBrush x:Key="LevelSaturationBrush" TileMode="None">
+            <VisualBrush.Visual>
+                <Canvas Background="Black" Width="1" Height="1" SnapsToDevicePixels="True">
+                    <Rectangle Width="1" Height="1" SnapsToDevicePixels="True">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="White" Offset="0" />
+                                    <GradientStop Color="{DynamicResource CurrentColor}" Offset="1" />
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                        <Rectangle.OpacityMask>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                    <GradientStop Color="#00FFFFFF" Offset="1"/>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                </Canvas>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+    <Grid x:Name="GridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition x:Name="RowSelector" Height="160"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.ColumnSpan="2" x:Name="ButtonSelectColor" Style="{DynamicResource ButtonStyleSelectColor}" Click="ButtonSelectColor_Click"/>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="152" Width="174">
+                <Border BorderBrush="{DynamicResource ColorBrushForeground}" BorderThickness="1">
+                    <Canvas x:Name="CanvasColor" SnapsToDevicePixels="True" MouseMove="CanvasColor_MouseMove" Width="150" Height="150">
+                        <Rectangle Fill="{StaticResource LevelSaturationBrush}" Width="150" Height="150"/>
+                    </Canvas>
+                </Border>
+                <Border BorderBrush="{DynamicResource ColorBrushForeground}" BorderThickness="1" Margin="5 0 0 0">
+                    <Canvas x:Name="CanvasGamma" SnapsToDevicePixels="True" MouseMove="CanvasGamma_MouseMove" Width="15" Height="150">
+                        <Rectangle Fill="{StaticResource HueBrush}" Width="15" Height="150"/>
+                    </Canvas>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

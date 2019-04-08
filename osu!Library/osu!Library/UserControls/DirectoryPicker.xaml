@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="osu_Library.UserControls.DirectoryPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:osu_Library.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="400">
+    <Grid>
+        <TextBox x:Name="TextBoxPath" IsReadOnly="True" Style="{DynamicResource TextBoxStyleDirectoryPicker}" VerticalAlignment="Center" Margin="0 5 0 5"/>
+        <Button x:Name="ButtonOpen" Style="{DynamicResource ButtonStyleDirectory}" Width="30" HorizontalAlignment="Right" Margin="0 10 10 10" Click="ButtonOpen_Click"/>
+    </Grid>
+</UserControl>

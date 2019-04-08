@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="osu_Library.UserControls.Slider"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:osu_Library.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="400" Name="SliderPart" SizeChanged="SliderPart_SizeChanged">
+    <Grid x:Name="SliderArea" MouseEnter="SliderArea_MouseEnter" MouseLeave="SliderArea_MouseLeave" MouseDown="SliderArea_MouseDown">
+        <Rectangle x:Name="RectangleBackground" Opacity="1" Width="{Binding ElementName=SliderPart, Path=ActualWidth}" Height="5" MinHeight="5" MaxHeight="15" Fill="{DynamicResource ColorBrushForeground}" VerticalAlignment="Bottom" HorizontalAlignment="Stretch"/>
+        <Rectangle x:Name="RectangleForeground" Opacity="1" Width="0" Height="5" MinHeight="5" MaxHeight="15" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</UserControl>

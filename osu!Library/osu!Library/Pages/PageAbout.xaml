@@ -1,0 +1,50 @@
+﻿<Page x:Class="osu_Library.Pages.PageAbout"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:osu_Library.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="400"
+      Title="PageAbout">
+
+    <Grid>
+        <ScrollViewer Margin="0 5 0 5" Height="Auto">
+            <StackPanel Orientation="Vertical" Width="350" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0 0 0 0">
+                <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="osu!Libary" HorizontalAlignment="Center" Margin="0 0 0 0"/>
+                <Label x:Name="LabelVersion" Style="{DynamicResource LabelStyleMenu}" Content="VERSION" HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="10"/>
+                <Label Style="{DynamicResource LabelStyleMenu}" Content="Simple music player for your osu! library" HorizontalAlignment="Center" Margin="0"/>
+                <Label Style="{DynamicResource LabelStyleMenu}" Content="Created by Aleksandr Larionenko" HorizontalAlignment="Center" Margin="0"/>
+                <Label Style="{DynamicResource LabelStyleMenu}" Content="osu!Library is licensed under the MIT License" HorizontalAlignment="Center" Margin="0 20 0 10"/>
+                <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Used Resources" Margin="0 20 0 0"/>
+                <TextBlock Text="Thanks to wonderful people, whose solutions have helped me create this player. Links are clicable." Height="60" TextWrapping="Wrap" Padding="5"
+                           FontFamily="Segoi UI" FontSize="14" Foreground="{DynamicResource ColorBrushForeground}"/>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="http://www.linea.io">
+                        <TextBlock Text="Linea Free Iconset by Dario Ferrado" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://marlongrech.wordpress.com/2007/08/20/gridlength-animation/">
+                        <TextBlock Text="DataLength animation by marlongrech" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/32513387/how-to-create-a-color-canvas-for-color-picker-wpf">
+                        <TextBlock Text="How to fill color of colorpicker by Mark Feldman" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/23583817/get-canvas-color-at-point">
+                        <TextBlock Text="How to get pixel color by Mikael Törnqvist" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://blogs.msdn.microsoft.com/llobo/2006/08/01/maximizing-window-with-windowstylenone-considering-taskbar/">
+                        <TextBlock Text="Fullscreen bug fix by LesterLobo" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

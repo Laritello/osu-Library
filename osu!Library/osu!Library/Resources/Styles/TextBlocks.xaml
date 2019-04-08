@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:osu_Library.Resources.Styles">
+    <Style x:Key="TextBlockStyleLink" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoi UI"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorBrushForeground}"/>
+    </Style>
+</ResourceDictionary>
