@@ -222,52 +222,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Player\player_mute.png" />
-    <Resource Include="Resources\Images\Player\player_mute_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_next.png" />
-    <Resource Include="Resources\Images\Player\player_next_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_pause.png" />
-    <Resource Include="Resources\Images\Player\player_pause_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_play.png" />
-    <Resource Include="Resources\Images\Player\player_play_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_previous.png" />
-    <Resource Include="Resources\Images\Player\player_previous_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_repeat.png" />
-    <Resource Include="Resources\Images\Player\player_repeat_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_repeat_pressed.png" />
-    <Resource Include="Resources\Images\Player\player_repeat_pressed_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_shuffle.png" />
-    <Resource Include="Resources\Images\Player\player_shuffle_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_shuffle_pressed.png" />
-    <Resource Include="Resources\Images\Player\player_shuffle_pressed_highlighted.png" />
-    <Resource Include="Resources\Images\Player\player_volume.png" />
-    <Resource Include="Resources\Images\Player\player_volume_highlighted.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Player\player_background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\App\app_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Icons\icon_search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Buttons\button_settings.png" />
-    <Resource Include="Resources\Images\Buttons\button_settings_highlighted.png" />
-    <Resource Include="Resources\Images\Buttons\button_settings_pressed.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\App\app_logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="app_logo.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Icons\icon_loading.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Images\Icons\icon_loading_finished.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
