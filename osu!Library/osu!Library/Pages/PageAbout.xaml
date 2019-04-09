@@ -14,7 +14,7 @@
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="osu!Libary" HorizontalAlignment="Center" Margin="0 0 0 0"/>
                 <Label x:Name="LabelVersion" Style="{DynamicResource LabelStyleMenu}" Content="VERSION" HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="10"/>
                 <Label Style="{DynamicResource LabelStyleMenu}" Content="Simple music player for your osu! library" HorizontalAlignment="Center" Margin="0"/>
-                <Label Style="{DynamicResource LabelStyleMenu}" Content="Created by Aleksandr Larionenko" HorizontalAlignment="Center" Margin="0"/>
+                <Label Style="{DynamicResource LabelStyleMenu}" Content="Created by Laritello" HorizontalAlignment="Center" Margin="0"/>
                 <Label Style="{DynamicResource LabelStyleMenu}" Content="osu!Library is licensed under the MIT License" HorizontalAlignment="Center" Margin="0 20 0 10"/>
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Used Libraries" Margin="0 20 0 0"/>
                 <TextBlock Padding="5">

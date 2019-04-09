@@ -20,5 +20,8 @@
     <Setting Name="AppColor" Type="System.Windows.Media.Color" Scope="User">
       <Value Profile="(Default)">#FF02C0FF</Value>
     </Setting>
+    <Setting Name="ExponentialVolume" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

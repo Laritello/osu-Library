@@ -94,5 +94,18 @@ namespace osu_Library.Classes
                 Properties.Settings.Default.Save();
             }
         }
+
+        public static bool ExponentialVolume
+        {
+            get
+            {
+                return Properties.Settings.Default.ExponentialVolume;
+            }
+            set
+            {
+                Properties.Settings.Default.ExponentialVolume = value;
+                Properties.Settings.Default.Save();
+            }
+        }
     }
 }

@@ -94,5 +94,17 @@ namespace osu_Library.Properties {
                 this["AppColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExponentialVolume {
+            get {
+                return ((bool)(this["ExponentialVolume"]));
+            }
+            set {
+                this["ExponentialVolume"] = value;
+            }
+        }
     }
 }
