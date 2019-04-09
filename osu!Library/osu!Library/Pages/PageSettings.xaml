@@ -17,7 +17,7 @@
                 <Label x:Name="LabelColor" Style="{DynamicResource LabelStyleMenu}" Content="Color"/>
                 <uc:ColorPicker x:Name="ColorPickerMain" SelectedColorChanged="ColorPickerMain_SelectedColorChanged"/>
                 <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="Volume Mode"/>
-                <uc:ToggleSwitch LeftName="Linear" RightName="Exponential"/>
+                <uc:ToggleSwitch x:Name="ToggleSwitchVolume" LeftName="Linear" RightName="Exponential" ValueChanged="ToggleSwitchVolume_ValueChanged"/>
                 <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="Language"/>
             </StackPanel>
         </ScrollViewer>

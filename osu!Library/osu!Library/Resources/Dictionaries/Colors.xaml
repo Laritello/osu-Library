@@ -4,7 +4,7 @@
     <Color x:Key="ColorBackground">#000000</Color>
     <Color x:Key="ColorMain">#02C0FF</Color>
     <Color x:Key="ColorSecondary">#008CBA</Color>
-    <Color x:Key="ColorActive">#555555</Color>
+    <Color x:Key="ColorActive">#808080</Color>
 
     <SolidColorBrush x:Key="ColorBrushForeground" Color="{DynamicResource ColorForeground}"/>
     <SolidColorBrush x:Key="ColorBrushBackground" Color="{DynamicResource ColorBackground}"/>

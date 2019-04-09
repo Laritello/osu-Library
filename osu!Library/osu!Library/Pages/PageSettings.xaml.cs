@@ -29,6 +29,7 @@ namespace osu_Library.Pages
             InitializeComponent();
 
             DirectoryPickerGamePath.SelectedPath = AppSettings.GamePath;
+            ToggleSwitchVolume.IsChecked = AppSettings.ExponentialVolume;
         }
 
         private void ColorPickerMain_SelectedColorChanged(SelectedColorChangedEventArgs e)
@@ -47,6 +48,11 @@ namespace osu_Library.Pages
             {
                 AppSettings.GamePath = e.NewPath;
             }
+        }
+
+        private void ToggleSwitchVolume_ValueChanged(ValueChangedEventArgs e)
+        {
+            AppSettings.ExponentialVolume = e.Value;
         }
     }
 }
