@@ -18,7 +18,7 @@
                 <Label Style="{DynamicResource LabelStyleMenu}" Content="osu!Library is licensed under the MIT License" HorizontalAlignment="Center" Margin="0 20 0 10"/>
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Used Libraries" Margin="0 20 0 0"/>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://github.com/naudio/NAudio">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://github.com/naudio/NAudio" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="NAudio .NET audio library by Mark Heath" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
@@ -26,27 +26,27 @@
                 <TextBlock Text="Thanks to wonderful people, whose solutions have helped me create this player. Links are clicable." Height="60" TextWrapping="Wrap" Padding="5"
                            FontFamily="Segoi UI" FontSize="14" Foreground="{DynamicResource ColorBrushForeground}"/>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="http://www.linea.io">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="http://www.linea.io" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="Linea Free Iconset by Dario Ferrado" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://marlongrech.wordpress.com/2007/08/20/gridlength-animation/">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://marlongrech.wordpress.com/2007/08/20/gridlength-animation/" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="DataLength animation by marlongrech" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/32513387/how-to-create-a-color-canvas-for-color-picker-wpf">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/32513387/how-to-create-a-color-canvas-for-color-picker-wpf" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="How to fill color of colorpicker by Mark Feldman" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/23583817/get-canvas-color-at-point">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://stackoverflow.com/questions/23583817/get-canvas-color-at-point" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="How to get pixel color by Mikael Törnqvist" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Padding="5">
-                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://blogs.msdn.microsoft.com/llobo/2006/08/01/maximizing-window-with-windowstylenone-considering-taskbar/">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://blogs.msdn.microsoft.com/llobo/2006/08/01/maximizing-window-with-windowstylenone-considering-taskbar/" Style="{DynamicResource HyperlinkStyleAbout}">
                         <TextBlock Text="Fullscreen bug fix by LesterLobo" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>

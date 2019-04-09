@@ -19,6 +19,7 @@
                 <ResourceDictionary Source="Resources/Styles/TextBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/TextBlocks.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Grids.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Hyperlinks.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

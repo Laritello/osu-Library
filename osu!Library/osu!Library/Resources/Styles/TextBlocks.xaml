@@ -6,5 +6,17 @@
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontWeight" Value="DemiBold"/>
         <Setter Property="Foreground" Value="{DynamicResource ColorBrushForeground}"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.Setters>
+                    <Setter Property="Foreground">
+                        <Setter.Value>
+                            <SolidColorBrush Color="{DynamicResource ColorMain}"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>
