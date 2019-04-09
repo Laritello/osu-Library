@@ -21,23 +21,15 @@ namespace osu_Library.UserControls
     /// </summary>
     public partial class ToggleSwitch : UserControl
     {
-        public bool IsChecked { get; set; }
-
-        public static readonly DependencyProperty LeftNameProperty = DependencyProperty.Register
-        ("LeftName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, LeftNameValueChanged));
-        public static readonly DependencyProperty RightNameProperty = DependencyProperty.Register("RightName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, RightNameValueChanged));
-
         public string LeftName
         {
             get
             {
                 return (string)GetValue(LeftNameProperty);
             }
-
             set
             {
                 SetValue(LeftNameProperty, value);
-
             }
         }
 
@@ -47,13 +39,33 @@ namespace osu_Library.UserControls
             {
                 return (string)GetValue(RightNameProperty);
             }
-
             set
             {
                 SetValue(RightNameProperty, value);
-
             }
         }
+
+        public bool IsChecked
+        {
+            get
+            {
+                return (bool)GetValue(IsCheckedProperty);
+            }
+            set
+            {
+                SetValue(IsCheckedProperty, value);
+                ValueChanged?.Invoke(new ValueChangedEventArgs { Value = (bool)GetValue(IsCheckedProperty) });
+            }
+        }
+
+        public static readonly DependencyProperty LeftNameProperty = DependencyProperty.Register
+        ("LeftName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, LeftNameValueChanged));
+        public static readonly DependencyProperty RightNameProperty = DependencyProperty.Register("RightName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, RightNameValueChanged));
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("IsChecked", typeof(bool), typeof(ToggleSwitch), new PropertyMetadata(false, IsCheckedValueChanged));
+
+
+        public delegate void ValueChangedEventHandler(ValueChangedEventArgs e);
+        public event ValueChangedEventHandler ValueChanged;
 
         public ToggleSwitch()
         {
@@ -128,5 +140,27 @@ namespace osu_Library.UserControls
             var control = d as ToggleSwitch;
             control.LabelRight.Content = control.RightName;
         }
+
+        private static void IsCheckedValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = d as ToggleSwitch;
+            if (control.IsChecked)
+            {
+                control.LabelLeft.Foreground = new SolidColorBrush(Colors.Gray);
+                control.LabelRight.Foreground = new SolidColorBrush(Colors.White);
+                control.Toggle.Margin = new Thickness(175, 0, 0, 0);
+            }
+            else
+            {
+                control.LabelLeft.Foreground = new SolidColorBrush(Colors.White);
+                control.LabelRight.Foreground = new SolidColorBrush(Colors.Gray);
+                control.Toggle.Margin = new Thickness(0, 0, 0, 0);
+            }
+        }
+    }
+
+    public class ValueChangedEventArgs : EventArgs
+    {
+        public bool Value { get; set; }
     }
 }
