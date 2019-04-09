@@ -17,7 +17,11 @@
                 <Label Style="{DynamicResource LabelStyleMenu}" Content="Created by Aleksandr Larionenko" HorizontalAlignment="Center" Margin="0"/>
                 <Label Style="{DynamicResource LabelStyleMenu}" Content="osu!Library is licensed under the MIT License" HorizontalAlignment="Center" Margin="0 20 0 10"/>
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Used Libraries" Margin="0 20 0 0"/>
-                <Label Style="{DynamicResource LabelStyleMenu}" Content="NAudio"/>
+                <TextBlock Padding="5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://github.com/naudio/NAudio">
+                        <TextBlock Text="NAudio .NET audio library by Mark Heath" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Used Resources" Margin="0 20 0 0"/>
                 <TextBlock Text="Thanks to wonderful people, whose solutions have helped me create this player. Links are clicable." Height="60" TextWrapping="Wrap" Padding="5"
                            FontFamily="Segoi UI" FontSize="14" Foreground="{DynamicResource ColorBrushForeground}"/>
