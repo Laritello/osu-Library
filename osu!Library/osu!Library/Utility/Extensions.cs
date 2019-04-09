@@ -11,7 +11,7 @@ namespace osu_Library.Utility
     {
         public static Color GetSecondaryColor(this Color mainColor)
         {
-            float k = 0.8f;
+            float k = 0.7f;
             return Color.FromRgb((byte)(mainColor.R * k), (byte)(mainColor.G * k), (byte)(mainColor.B * k));
         }
     }

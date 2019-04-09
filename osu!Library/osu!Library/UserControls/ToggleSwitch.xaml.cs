@@ -23,15 +23,63 @@ namespace osu_Library.UserControls
     {
         public bool IsChecked { get; set; }
 
+        public static readonly DependencyProperty LeftNameProperty = DependencyProperty.Register
+        ("LeftName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, LeftNameValueChanged));
+        public static readonly DependencyProperty RightNameProperty = DependencyProperty.Register("RightName", typeof(string), typeof(ToggleSwitch), new PropertyMetadata(string.Empty, RightNameValueChanged));
+
+        public string LeftName
+        {
+            get
+            {
+                return (string)GetValue(LeftNameProperty);
+            }
+
+            set
+            {
+                SetValue(LeftNameProperty, value);
+
+            }
+        }
+
+        public string RightName
+        {
+            get
+            {
+                return (string)GetValue(RightNameProperty);
+            }
+
+            set
+            {
+                SetValue(RightNameProperty, value);
+
+            }
+        }
+
         public ToggleSwitch()
         {
             InitializeComponent();
             IsChecked = false;
         }
 
-        private void Canvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ToggleValue(object sender, MouseButtonEventArgs e)
         {
             ThicknessAnimation anim;
+            ColorAnimation animColorOff, animColorOn;
+
+            animColorOn = new ColorAnimation
+            {
+                From = (Color)FindResource("ColorActive"),
+                To = (Color)FindResource("ColorForeground"),
+                Duration = TimeSpan.FromSeconds(0.25)
+            };
+
+            animColorOff = new ColorAnimation
+            {
+                From = (Color)FindResource("ColorForeground"),
+                To = (Color)FindResource("ColorActive"),
+                Duration = TimeSpan.FromSeconds(0.25)
+            };
+
             if (!IsChecked)
             {
                 IsChecked = true;
@@ -43,6 +91,10 @@ namespace osu_Library.UserControls
                     Duration = TimeSpan.FromSeconds(0.25)
                 };
 
+                LabelLeft.Foreground = new SolidColorBrush();
+                LabelRight.Foreground = new SolidColorBrush();
+                LabelLeft.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, animColorOff);
+                LabelRight.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, animColorOn);
                 Toggle.BeginAnimation(Canvas.MarginProperty, anim);
             }
             else
@@ -56,8 +108,25 @@ namespace osu_Library.UserControls
                     Duration = TimeSpan.FromSeconds(0.25)
                 };
 
+                LabelLeft.Foreground = new SolidColorBrush();
+                LabelRight.Foreground = new SolidColorBrush();
+
+                LabelLeft.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, animColorOn);
+                LabelRight.Foreground.BeginAnimation(SolidColorBrush.ColorProperty, animColorOff);
                 Toggle.BeginAnimation(Canvas.MarginProperty, anim);
             }
+        }
+
+        private static void LeftNameValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = d as ToggleSwitch;
+            control.LabelLeft.Content = control.LeftName;
+        }
+
+        private static void RightNameValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = d as ToggleSwitch;
+            control.LabelRight.Content = control.RightName;
         }
     }
 }

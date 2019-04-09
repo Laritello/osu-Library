@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="30" d:DesignWidth="350">
     <Grid Height="30">
-        <Canvas MouseLeftButtonDown="Canvas_MouseLeftButtonDown">
+        <Canvas MouseLeftButtonDown="ToggleValue">
             <Canvas.Background>
                 <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.0001"/>
             </Canvas.Background>
@@ -18,5 +18,7 @@
             </Rectangle>
             <Rectangle x:Name="Border" Width="350" Height="30" Stroke="White" RadiusX="15" RadiusY="15"/>
         </Canvas>
+        <Label x:Name="LabelLeft" Style="{DynamicResource LabelStyleArtist}" Content="OFF" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15 0 0 0" Padding="0" MouseDown="ToggleValue"/>
+        <Label x:Name="LabelRight" Style="{DynamicResource LabelStyleArtist}" Content="ON" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Margin="0 0 15 0" Padding="0" Foreground="{DynamicResource ColorBrushActive}" MouseDown="ToggleValue"/>
     </Grid>
 </UserControl>
