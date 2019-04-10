@@ -17,8 +17,8 @@ namespace osu_Library.Classes
             }
             set
             {
-                if (value > 100)
-                    _volume = 100;
+                if (value > 1)
+                    _volume = 1;
                 else if (value < 0)
                     _volume = 0;
                 else
@@ -218,7 +218,7 @@ namespace osu_Library.Classes
             try
             {
                 if (_player != null)
-                    _player.Volume = value / 100;
+                    _player.Volume = value;
             }
             catch { }
         }

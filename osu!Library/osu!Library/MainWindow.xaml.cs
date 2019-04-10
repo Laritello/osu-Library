@@ -468,10 +468,15 @@ namespace osu_Library
         {
             if (_player != null)
             {
-                _player.Volume = (float)e.NewValue;
-                AppSettings.Volume = _player.Volume;
+                float sliderValue = (float)e.NewValue;
 
-                LabelVolume.Content = $"{_player.Volume.ToString("0")}";
+                if (AppSettings.ExponentialVolume)
+                    _player.Volume = GetExponantialVolume(sliderValue);
+                else
+                    _player.Volume = sliderValue;
+
+                AppSettings.Volume = _player.Volume;
+                LabelVolume.Content = $"{(_player.Volume * 100).ToString("0")}";
             }
         }
 
@@ -494,7 +499,7 @@ namespace osu_Library
 
         private void StackPanelVolume_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            SliderVolume.Value += Math.Sign(e.Delta) * 2;
+            SliderVolume.Value += Math.Sign(e.Delta) * 0.01;
         }
 
         private void ListBoxSongs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -708,6 +713,14 @@ namespace osu_Library
         #endregion
 
         #region Utility
+        
+        private float GetExponantialVolume(double value)
+        {
+            float a = 0.5819768f;
+            float volume = (float)(a * Math.Pow(Math.E, value)) - a;
+            return volume;
+        }
+
         private string GetGamePath()
         {
             RegistryKey parentKey = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Uninstall");
