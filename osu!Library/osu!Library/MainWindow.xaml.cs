@@ -112,7 +112,10 @@ namespace osu_Library
             _timerDuration.Tick += _timerDuration_Tick;
             _timerDuration.Start();
 
-            SliderVolume.Value = _player.Volume;
+            if (AppSettings.ExponentialVolume)
+                SliderVolume.Value = GetSliderValueFromExponantialVolume(_player.Volume);
+            else
+                SliderVolume.Value = _player.Volume;
         }
         #endregion
 
@@ -499,7 +502,7 @@ namespace osu_Library
 
         private void StackPanelVolume_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
-            SliderVolume.Value += Math.Sign(e.Delta) * 0.01;
+            SliderVolume.Value += Math.Sign(e.Delta) * 0.02;
         }
 
         private void ListBoxSongs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -714,11 +717,21 @@ namespace osu_Library
 
         #region Utility
         
-        private float GetExponantialVolume(double value)
+        private float GetExponantialVolume(float value)
         {
-            float a = 0.5819768f;
-            float volume = (float)(a * Math.Pow(Math.E, value)) - a;
+            float a = 0.001f;
+            float volume = (float)(a * Math.Exp(6.909f * value)) - a;
             return volume;
+        }
+
+        private float GetSliderValueFromExponantialVolume(float volume)
+        {
+            if (volume >= 1)
+                return 1;
+
+            float a = 0.001f;
+            float value = (float)(Math.Log((volume + a) / a)) / 6.909f;
+            return value;
         }
 
         private string GetGamePath()
