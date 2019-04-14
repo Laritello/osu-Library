@@ -53,6 +53,9 @@ namespace osu_Library.Pages
         private void ToggleSwitchVolume_ValueChanged(ValueChangedEventArgs e)
         {
             AppSettings.ExponentialVolume = e.Value;
+
+            MainWindow parent = Application.Current.MainWindow as MainWindow;
+            parent.UpdateSliderVolume();
         }
     }
 }

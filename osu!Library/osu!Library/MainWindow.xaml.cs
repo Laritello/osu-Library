@@ -213,7 +213,6 @@ namespace osu_Library
                     // i'll do it later.
                     anim.Completed += new EventHandler(delegate (object o, EventArgs e)
                     {
-                        // Change picture of control to check mark and stop rotation
                         ControlProgress.Content = (Canvas)FindResource("CanvasCheck");
                         RotateTransformControlProgress.BeginAnimation(RotateTransform.AngleProperty, null);
 
@@ -481,6 +480,15 @@ namespace osu_Library
                 AppSettings.Volume = _player.Volume;
                 LabelVolume.Content = $"{(_player.Volume * 100).ToString("0")}";
             }
+        }
+
+        // Updates slider value based on current volume and volume mode
+        public void UpdateSliderVolume()
+        {
+            if (AppSettings.ExponentialVolume)
+                SliderVolume.Value = GetSliderValueFromExponantialVolume(_player.Volume);
+            else
+                SliderVolume.Value = _player.Volume;
         }
 
         private void SliderDuration_ValueChanged(TimeSpan newValue)
