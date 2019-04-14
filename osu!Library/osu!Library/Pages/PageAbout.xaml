@@ -32,7 +32,7 @@
                 </TextBlock>
                 <TextBlock Padding="5">
                     <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://marlongrech.wordpress.com/2007/08/20/gridlength-animation/" Style="{DynamicResource HyperlinkStyleAbout}">
-                        <TextBlock Text="DataLength animation by marlongrech" Style="{DynamicResource TextBlockStyleLink}"/>
+                        <TextBlock Text="GridLength animation by marlongrech" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Padding="5">
