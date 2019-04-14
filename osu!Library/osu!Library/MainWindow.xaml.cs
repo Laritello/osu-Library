@@ -26,6 +26,7 @@ using System.Runtime.InteropServices;
 using osu_Library.Classes;
 using osu_Library.Pages;
 using osu_Library.Utility;
+using System.Globalization;
 
 namespace osu_Library
 {
@@ -68,6 +69,8 @@ namespace osu_Library
             InitializeWindow();
             InitializePlayer();
             InitializeMenu();
+
+
         }
 
         private void InitializeMenu()
@@ -93,6 +96,8 @@ namespace osu_Library
             resource.MergedDictionaries[0]["ColorSecondary"] = AppSettings.AppColor.GetSecondaryColor();
 
             WindowModeSetup(AppSettings.OverlayMode);
+
+            App.LanguageChanged += LanguageChanged;
         }
 
         private void InitializePlayer()
@@ -641,6 +646,12 @@ namespace osu_Library
             if (ListBoxSongs.HasItems)
                 _manager.SavePlaylist(ListBoxSongs.ItemsSource as List<Beatmap>);
         }
+
+        private void LanguageChanged(Object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Language;
+        }
+
 
         private void _player_ModeChanged(PlayMode newMode)
         {

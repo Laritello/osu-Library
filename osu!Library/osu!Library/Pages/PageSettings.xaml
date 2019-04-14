@@ -19,6 +19,13 @@
                 <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="Volume Mode"/>
                 <uc:ToggleSwitch x:Name="ToggleSwitchVolume" LeftName="Linear" RightName="Exponential" ValueChanged="ToggleSwitchVolume_ValueChanged"/>
                 <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="Language"/>
+                <ComboBox x:Name="ComboBoxLang" SelectionChanged="ComboBoxLang_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Path=DisplayName}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </StackPanel>
         </ScrollViewer>
     </Grid>

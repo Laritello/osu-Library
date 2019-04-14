@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -30,6 +31,8 @@ namespace osu_Library.Pages
 
             DirectoryPickerGamePath.SelectedPath = AppSettings.GamePath;
             ToggleSwitchVolume.IsChecked = AppSettings.ExponentialVolume;
+
+            ComboBoxLang.ItemsSource = App.Languages;
         }
 
         private void ColorPickerMain_SelectedColorChanged(SelectedColorChangedEventArgs e)
@@ -56,6 +59,24 @@ namespace osu_Library.Pages
 
             MainWindow parent = Application.Current.MainWindow as MainWindow;
             parent.UpdateSliderVolume();
+        }
+
+        private void ComboBoxLang_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ComboBoxLang.SelectedItem == null)
+            {
+                App.Language = new CultureInfo("en-US");
+                return;
+            }
+
+            try
+            {
+                App.Language = ComboBoxLang.SelectedItem as CultureInfo;
+            }
+            catch
+            {
+                App.Language = new CultureInfo("en-US");
+            }
         }
     }
 }

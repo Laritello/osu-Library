@@ -101,6 +101,14 @@
     </Compile>
     <Compile Include="Utility\Extensions.cs" />
     <Compile Include="Utility\GridLengthAnimation.cs" />
+    <Page Include="Languages\Language.ru-RU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\Language.en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

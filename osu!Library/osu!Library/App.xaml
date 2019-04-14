@@ -6,6 +6,8 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--Languages-->
+                <ResourceDictionary Source="Languages/Language.en-US.xaml"/>
                 <!--Order is important!-->
                 <ResourceDictionary Source="Resources/Dictionaries/Colors.xaml"/>
                 <ResourceDictionary Source="Resources/Dictionaries/Images.xaml"/>
