@@ -11,14 +11,14 @@
     <Grid>
         <ScrollViewer Margin="0 5 0 5" Height="Auto">
             <StackPanel Orientation="Vertical" Width="350" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0 0 0 0">
-                <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="Settings" />
-                <Label x:Name="LabelSettings" Style="{DynamicResource LabelStyleMenu}" Content="Game Folder"/>
+                <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="{DynamicResource LangSettingsTitle}" />
+                <Label x:Name="LabelSettings" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsFolder}"/>
                 <uc:DirectoryPicker x:Name="DirectoryPickerGamePath" SelectedPathChanged="DirectoryPickerGamePath_SelectedPathChanged"/>
-                <Label x:Name="LabelColor" Style="{DynamicResource LabelStyleMenu}" Content="Color"/>
+                <Label x:Name="LabelColor" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsColor}"/>
                 <uc:ColorPicker x:Name="ColorPickerMain" SelectedColorChanged="ColorPickerMain_SelectedColorChanged"/>
-                <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="Volume Mode"/>
-                <uc:ToggleSwitch x:Name="ToggleSwitchVolume" LeftName="Linear" RightName="Exponential" ValueChanged="ToggleSwitchVolume_ValueChanged"/>
-                <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="Language"/>
+                <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsVolumeMode}"/>
+                <uc:ToggleSwitch x:Name="ToggleSwitchVolume" LeftName="{DynamicResource LangSettingsVolumeModeLinear}" RightName="{DynamicResource LangSettingsVolumeModeExponential}" ValueChanged="ToggleSwitchVolume_ValueChanged"/>
+                <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsLanguage}"/>
                 <ComboBox x:Name="ComboBoxLang" SelectionChanged="ComboBoxLang_SelectionChanged">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

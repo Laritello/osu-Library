@@ -19,4 +19,33 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style x:Key="TextBlockStyleMenu" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Open Sans"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="Padding" Value="0 0 0 0"/>
+        <Setter Property="Margin" Value="15 5 0 5"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="TextAlignment" Value="Justify"/>
+
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Key="TextBlockStyleMenuTitle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Open Sans"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Padding" Value="0 0 0 0"/>
+
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="0 5 5 5"/>
+
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
 </ResourceDictionary>

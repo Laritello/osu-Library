@@ -2,5 +2,25 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:osu_Library.Languages"
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <!--Player-->
     <v:String x:Key="LangPlayerTitle">Название</v:String>
+    <v:String x:Key="LangPlayerArtist">Автор</v:String>
+
+    <!--Settings-->
+    <v:String x:Key="LangSettingsTitle">Настройки</v:String>
+    <v:String x:Key="LangSettingsFolder">Папка с игрой</v:String>
+    <v:String x:Key="LangSettingsColor">Цвет приложения</v:String>
+    <v:String x:Key="LangSettingsVolumeMode">Режим громкости</v:String>
+    <v:String x:Key="LangSettingsVolumeModeLinear">Линейный</v:String>
+    <v:String x:Key="LangSettingsVolumeModeExponential">Экспонен.</v:String>
+    <v:String x:Key="LangSettingsLanguage">Язык</v:String>
+
+    <!--About-->
+    <v:String x:Key="LangAboutVersion">Версия</v:String>
+    <v:String x:Key="LangAboutDescription">Простой музыкальный проигрыватель для твоей библиотеки osu!</v:String>
+    <v:String x:Key="LangAboutAuthor">Создано Laritello</v:String>
+    <v:String x:Key="LangAboutLicense">osu!Library лицензируется по лицензии MIT</v:String>
+    <v:String x:Key="LangAboutLibrariesTitle">Использованные сторонние библиотеки</v:String>
+    <v:String x:Key="LangAboutResourcesTitle">Использованные ресурсы</v:String>
+    <v:String x:Key="LangAboutResourcesDescription">Спасибо замечательным людям, чьи решения помогли мне создать этот плеер. Ссылки кликабельны.</v:String>
 </ResourceDictionary>

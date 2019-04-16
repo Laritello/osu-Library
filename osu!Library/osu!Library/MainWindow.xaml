@@ -32,7 +32,7 @@
                 <DockPanel>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5 0 0 0">
                         <Label x:Name="LabelTitle" Content="{DynamicResource LangPlayerTitle}" FontFamily="Open Sans Bold" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
-                        <Label x:Name="LabelArtist" Content="Artist" FontFamily="Open Sans" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
+                        <Label x:Name="LabelArtist" Content="{DynamicResource LangPlayerArtist}" FontFamily="Open Sans" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
                     </StackPanel>
                     <Label x:Name="LabelDuration" Content="00:00/00:00" FontFamily="Open Sans" Foreground="White" Padding="0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxWidth="90" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="20" Margin="0 0 5 0"/>
                 </DockPanel>

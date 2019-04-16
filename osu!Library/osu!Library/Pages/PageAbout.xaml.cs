@@ -22,11 +22,19 @@ namespace osu_Library.Pages
     /// </summary>
     public partial class PageAbout : Page
     {
+        public Version AssemblyVersion
+        {
+            get
+            {
+                return Assembly.GetEntryAssembly().GetName().Version;
+            }
+        }
+
         public PageAbout()
         {
             InitializeComponent();
 
-            LabelVersion.Content = $"Version {Assembly.GetEntryAssembly().GetName().Version}";
+            //LabelVersion.Content = $"Version {Assembly.GetEntryAssembly().GetName().Version}";
         }
 
         private void HandleLinkClick(object sender, RoutedEventArgs e)
