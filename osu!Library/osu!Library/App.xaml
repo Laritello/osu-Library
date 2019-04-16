@@ -7,12 +7,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--Languages-->
-                <ResourceDictionary Source="Languages/Language.en-US.xaml"/>
                 <!--Order is important!-->
                 <ResourceDictionary Source="Resources/Dictionaries/Colors.xaml"/>
                 <ResourceDictionary Source="Resources/Dictionaries/Images.xaml"/>
 
+                <!--Languages-->
+                <ResourceDictionary Source="Languages/Language.en-US.xaml"/>
+                
                 <ResourceDictionary Source="Resources/Styles/Labels.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Buttons.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Images.xaml"/>
