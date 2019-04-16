@@ -21,6 +21,7 @@
                 <ResourceDictionary Source="Resources/Styles/ScrollBars.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/ListBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/TextBoxes.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/ComboBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/TextBlocks.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Grids.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Hyperlinks.xaml"/>
