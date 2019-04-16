@@ -33,6 +33,7 @@ namespace osu_Library.Pages
             ToggleSwitchVolume.IsChecked = AppSettings.ExponentialVolume;
 
             ComboBoxLang.ItemsSource = App.Languages;
+            ComboBoxLang.SelectedItem = AppSettings.Language;
         }
 
         private void ColorPickerMain_SelectedColorChanged(SelectedColorChangedEventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,19 @@ namespace osu_Library.Classes
             set
             {
                 Properties.Settings.Default.ExponentialVolume = value;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        public static CultureInfo Language
+        {
+            get
+            {
+                return Properties.Settings.Default.Language;
+            }
+            set
+            {
+                Properties.Settings.Default.Language = value;
                 Properties.Settings.Default.Save();
             }
         }

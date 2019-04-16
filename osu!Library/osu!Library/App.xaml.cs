@@ -1,4 +1,5 @@
-﻿using System;
+﻿using osu_Library.Classes;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,15 +13,6 @@ namespace osu_Library
     public partial class App : Application
     {
         public static List<CultureInfo> Languages { get; } = new List<CultureInfo>();
-
-        public App()
-        {
-            Languages.Clear();
-            Languages.Add(new CultureInfo("en-US"));
-            Languages.Add(new CultureInfo("ru-RU"));
-        }
-
-        public static event EventHandler LanguageChanged;
 
         public static CultureInfo Language
         {
@@ -62,6 +54,30 @@ namespace osu_Library
 
                 LanguageChanged?.Invoke(Application.Current, new EventArgs());
             }
+        }
+
+        public App()
+        {
+            Languages.Clear();
+            Languages.Add(new CultureInfo("en-US"));
+            Languages.Add(new CultureInfo("ru-RU"));
+
+            App.LanguageChanged += App_LanguageChanged;
+        }
+
+        public static event EventHandler LanguageChanged;
+
+        private void Application_LoadCompleted(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (Languages.Contains(AppSettings.Language))
+                Language = AppSettings.Language;
+            else
+                Language = new CultureInfo("en-US");
+        }
+
+        private void App_LanguageChanged(Object sender, EventArgs e)
+        {
+            AppSettings.Language = Language;
         }
     }
 }
