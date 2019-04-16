@@ -19,7 +19,7 @@
                 <Label x:Name="LabelVolumeMode" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsVolumeMode}"/>
                 <uc:ToggleSwitch x:Name="ToggleSwitchVolume" LeftName="{DynamicResource LangSettingsVolumeModeLinear}" RightName="{DynamicResource LangSettingsVolumeModeExponential}" ValueChanged="ToggleSwitchVolume_ValueChanged"/>
                 <Label x:Name="LabelLang" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangSettingsLanguage}"/>
-                <ComboBox x:Name="ComboBoxLang" SelectionChanged="ComboBoxLang_SelectionChanged">
+                <ComboBox x:Name="ComboBoxLang" SelectionChanged="ComboBoxLang_SelectionChanged" Style="{DynamicResource ComboBoxStyleMenu}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <Label Content="{Binding Path=DisplayName}"/>
