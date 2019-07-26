@@ -45,7 +45,6 @@
                 </Grid.Background>
                 <Button x:Name="ButtonVolume" Style="{DynamicResource ButtonStylePlayerVolume}" HorizontalAlignment="Left" Margin="5 0 0 0" Click="ButtonVolume_Click"
                         MouseEnter="ButtonVolume_MouseEnter" MouseLeave="ButtonVolume_MouseLeave"/>
-
                 <StackPanel x:Name="StackPanelVolume" Orientation="Horizontal" Margin="25 5 0 5" HorizontalAlignment="Left" MouseLeave="StackPanelVolume_MouseLeave" PreviewMouseWheel="StackPanelVolume_PreviewMouseWheel">
                     <StackPanel.Background>
                         <!--Hack to make slider dont scroll when mouse leaves it-->
