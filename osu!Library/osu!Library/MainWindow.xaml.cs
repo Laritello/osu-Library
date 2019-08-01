@@ -111,7 +111,7 @@ namespace osu_Library
 
             _timerDuration = new DispatcherTimer
             {
-                Interval = new TimeSpan(0, 0, 0, 0, 100)
+                Interval = TimeSpan.FromMilliseconds(100)
             };
 
             _timerDuration.Tick += _timerDuration_Tick;
@@ -414,11 +414,11 @@ namespace osu_Library
                         break;
 
                     case PlayMode.Pause:
-                        Play();
+                        _player.Play();
                         break;
 
                     case PlayMode.Stop:
-                        Play();
+                        _player.Play();
                         break;
 
                     case PlayMode.Unloaded:
@@ -503,7 +503,7 @@ namespace osu_Library
                 try
                 {
                     _player.Stop();
-                    _player.SetCurrentPosition(newValue);
+                    _player.CurrentTime = newValue;
                     _player.Play();
                 }
                 catch
@@ -824,7 +824,7 @@ namespace osu_Library
                 ImageBackground.Source = new BitmapImage(new Uri(@"pack://application:,,,/Resources/Images/Player/player_background.jpg"));
             }
 
-            SliderDuration.Maximum = _player.GetTotalLength();
+            SliderDuration.Maximum = _player.TotalTime;
             SliderDuration.Value = TimeSpan.Zero;
             LabelTitle.Content = _selectedSong.Title;
             LabelArtist.Content = _selectedSong.Artist;
@@ -837,14 +837,17 @@ namespace osu_Library
 
         private bool Play()
         {
-            if (_player.LoadSong(_selectedSong.PathToAudio))
+            try
             {
+                _player.Load(_selectedSong.PathToAudio);
                 UpdateInformation();
                 _player.Play();
                 return true;
             }
-            else
+            catch
+            {
                 return false;
+            }                
         }
 
         private void NextSong(bool repeatEnabled = false)
@@ -901,8 +904,8 @@ namespace osu_Library
         {
             if (_player != null)
             {
-                TimeSpan currentPosition = _player.GetCurrentPosition();
-                TimeSpan totalLength = _player.GetTotalLength();
+                TimeSpan currentPosition = _player.CurrentTime;
+                TimeSpan totalLength = _player.TotalTime;
 
                 SliderDuration.Value = currentPosition;
                 LabelDuration.Content = $"{currentPosition.ToString("mm\\:ss")}/{totalLength.ToString("mm\\:ss")}";

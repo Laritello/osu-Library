@@ -7,45 +7,11 @@ using System.Threading.Tasks;
 
 namespace osu_Library.Classes
 {
-    class Player
+    class AudioPlayback : IDisposable
     {
         private IWavePlayer playbackDevice;
         private WaveStream fileStream;
         private float _volume;
-        private bool _muted;
-        private PlayMode _mode;
-
-        public PlayMode Mode
-        {
-            get
-            {
-                return _mode;
-            }
-
-            set
-            {
-                _mode = value;
-                ModeChanged?.Invoke(_mode);
-            }
-        }
-
-        public bool Muted
-        {
-            get
-            {
-                return _muted;
-            }
-            set
-            {
-                _muted = value;
-            }
-        }
-
-        public delegate void SongEndedEventHandler();
-        public event SongEndedEventHandler SongEnded;
-
-        public delegate void ModeChangedEventHandler(PlayMode newMode);
-        public event ModeChangedEventHandler ModeChanged;
 
         public TimeSpan TotalTime
         {
@@ -79,14 +45,11 @@ namespace osu_Library.Classes
         {
             get
             {
-                return _volume;
+                return playbackDevice.Volume;
             }
             set
             {
-                _volume = value;
-
-                if (playbackDevice != null)
-                    playbackDevice.Volume = value;
+                playbackDevice.Volume = value;
             }
         }
 
@@ -104,17 +67,17 @@ namespace osu_Library.Classes
             MaximumCalculated?.Invoke(this, e);
         }
 
+        public event EventHandler<StoppedEventArgs> PlayBackStopped;
+
         protected virtual void OnPlaybackStopped(StoppedEventArgs e)
         {
-            if (fileStream.CurrentTime >= fileStream.TotalTime || (fileStream.TotalTime - fileStream.CurrentTime).TotalMilliseconds < 200)
-                SongEnded?.Invoke();
+            PlayBackStopped?.Invoke(this, e);
         }
 
         public void Load(string fileName)
         {
             Stop();
             CloseFile();
-            DisposeDevice();
             EnsureDeviceCreated();
             OpenFile(fileName);
         }
@@ -128,36 +91,17 @@ namespace osu_Library.Classes
             }
         }
 
-        private void DisposeDevice()
-        {
-            if (playbackDevice != null)
-            {
-                playbackDevice.Dispose();
-                playbackDevice = null;
-            }
-        }
-
         private void OpenFile(string fileName)
         {
             try
             {
                 var inputStream = new AudioFileReader(fileName);
                 fileStream = inputStream;
-
-                var aggregator = new SampleAggregator(inputStream)
-                {
-                    NotificationCount = inputStream.WaveFormat.SampleRate / 100,
-                    PerformFFT = true
-                };
-
+                var aggregator = new SampleAggregator(inputStream);
+                aggregator.NotificationCount = inputStream.WaveFormat.SampleRate / 100;
+                aggregator.PerformFFT = true;
                 aggregator.FftCalculated += (s, a) => OnFftCalculated(a);
                 aggregator.MaximumCalculated += (s, a) => OnMaximumCalculated(a);
-
-                if (playbackDevice != null)
-                    playbackDevice.Dispose();
-
-                CreateDevice();
-
                 playbackDevice.Init(aggregator);
                 playbackDevice.PlaybackStopped += (s, a) => OnPlaybackStopped(a);
             }
@@ -186,7 +130,6 @@ namespace osu_Library.Classes
             if (playbackDevice != null && fileStream != null && playbackDevice.PlaybackState != PlaybackState.Playing)
             {
                 playbackDevice.Play();
-                Mode = PlayMode.Play;
             }
         }
 
@@ -195,7 +138,6 @@ namespace osu_Library.Classes
             if (playbackDevice != null)
             {
                 playbackDevice.Pause();
-                Mode = PlayMode.Pause;
             }
         }
 
@@ -204,7 +146,6 @@ namespace osu_Library.Classes
             if (playbackDevice != null)
             {
                 playbackDevice.Stop();
-                Mode = PlayMode.Stop;
             }
             if (fileStream != null)
             {
@@ -216,7 +157,11 @@ namespace osu_Library.Classes
         {
             Stop();
             CloseFile();
-            DisposeDevice();
+            if (playbackDevice != null)
+            {
+                playbackDevice.Dispose();
+                playbackDevice = null;
+            }
         }
     }
 }

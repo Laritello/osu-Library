@@ -75,10 +75,12 @@
     </ApplicationDefinition>
     <Compile Include="Classes\AppDataManager.cs" />
     <Compile Include="Classes\AppSettings.cs" />
+    <Compile Include="Classes\AudioPlayback.cs" />
     <Compile Include="Classes\Beatmap.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\LibraryManager.cs" />
     <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\SampleAggregator.cs" />
     <Compile Include="Pages\PageAbout.xaml.cs">
       <DependentUpon>PageAbout.xaml</DependentUpon>
     </Compile>
