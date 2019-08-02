@@ -9,7 +9,7 @@
     <Grid>
         <Rectangle x:Name="rcMain" 
                    VerticalAlignment="Bottom"
-                   Width="{Binding (Grid.Width),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}">
+                   Width="{Binding (Grid.Width),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}">
             <Rectangle.Fill>
                 <SolidColorBrush Color="{DynamicResource ColorMain}"/>
             </Rectangle.Fill>
