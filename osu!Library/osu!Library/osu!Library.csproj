@@ -75,10 +75,12 @@
     </ApplicationDefinition>
     <Compile Include="Classes\AppDataManager.cs" />
     <Compile Include="Classes\AppSettings.cs" />
+    <Compile Include="Classes\AudioPlayback.cs" />
     <Compile Include="Classes\Beatmap.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\LibraryManager.cs" />
     <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\SampleAggregator.cs" />
     <Compile Include="Pages\PageAbout.xaml.cs">
       <DependentUpon>PageAbout.xaml</DependentUpon>
     </Compile>
@@ -93,6 +95,12 @@
     </Compile>
     <Compile Include="UserControls\Slider.xaml.cs">
       <DependentUpon>Slider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpectrumAnalyzer.xaml.cs">
+      <DependentUpon>SpectrumAnalyzer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpectrumAnalyzerItem.xaml.cs">
+      <DependentUpon>SpectrumAnalyzerItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\TitleBar.xaml.cs">
       <DependentUpon>TitleBar.xaml</DependentUpon>
@@ -191,6 +199,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpectrumAnalyzer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpectrumAnalyzerItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
