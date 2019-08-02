@@ -96,6 +96,12 @@
     <Compile Include="UserControls\Slider.xaml.cs">
       <DependentUpon>Slider.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SpectrumAnalyzer.xaml.cs">
+      <DependentUpon>SpectrumAnalyzer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpectrumAnalyzerItem.xaml.cs">
+      <DependentUpon>SpectrumAnalyzerItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TitleBar.xaml.cs">
       <DependentUpon>TitleBar.xaml</DependentUpon>
     </Compile>
@@ -193,6 +199,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpectrumAnalyzer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpectrumAnalyzerItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,18 +25,23 @@
         </Grid.RowDefinitions>
         <Grid x:Name="GridPlayer" Grid.Row="0">
             <Image x:Name="ImageBackground" Source="/osu!Library;component/Resources/Images/Player/player_background.jpg" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Vertical"  VerticalAlignment="Bottom" Margin="0 0 0 40">
-                <StackPanel.Background>
-                    <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.7"/>
-                </StackPanel.Background>
-                <DockPanel>
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5 0 0 0">
-                        <Label x:Name="LabelTitle" Content="{DynamicResource LangPlayerTitle}" FontFamily="Open Sans Bold" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
-                        <Label x:Name="LabelArtist" Content="{DynamicResource LangPlayerArtist}" FontFamily="Open Sans" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
-                    </StackPanel>
-                    <Label x:Name="LabelDuration" Content="00:00/00:00" FontFamily="Open Sans" Foreground="White" Padding="0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxWidth="90" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="20" Margin="0 0 5 0"/>
-                </DockPanel>
-                <uc:Slider x:Name="SliderDuration" ValueChanged="SliderDuration_ValueChanged"/>
+            
+            <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="0 0 0 40">
+                <uc:SpectrumAnalyzer x:Name="spectrum" Height="50"/>
+                <StackPanel Orientation="Vertical"  VerticalAlignment="Bottom">
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.7"/>
+                    </StackPanel.Background>
+
+                    <DockPanel>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="5 0 0 0">
+                            <Label x:Name="LabelTitle" Content="{DynamicResource LangPlayerTitle}" FontFamily="Open Sans Bold" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
+                            <Label x:Name="LabelArtist" Content="{DynamicResource LangPlayerArtist}" FontFamily="Open Sans" Foreground="White" FontSize="12" Padding="0" HorizontalAlignment="Left" MaxWidth="300" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Height="20"/>
+                        </StackPanel>
+                        <Label x:Name="LabelDuration" Content="00:00/00:00" FontFamily="Open Sans" Foreground="White" Padding="0" FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Bottom" MaxWidth="90" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Height="20" Margin="0 0 5 0"/>
+                    </DockPanel>
+                    <uc:Slider x:Name="SliderDuration" ValueChanged="SliderDuration_ValueChanged"/>
+                </StackPanel>
             </StackPanel>
 
             <Grid x:Name="GridContol" Height="40" VerticalAlignment="Bottom">

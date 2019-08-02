@@ -30,7 +30,7 @@ namespace osu_Library.Classes
 
         private readonly int channels;
 
-        public SampleAggregator(ISampleProvider source, int fftLength = 1024)
+        public SampleAggregator(ISampleProvider source, int fftLength = 2048)
         {
             channels = source.WaveFormat.Channels;
             if (!IsPowerOfTwo(fftLength))

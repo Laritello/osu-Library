@@ -107,6 +107,7 @@ namespace osu_Library
 
             _player.ModeChanged += _player_ModeChanged;
             _player.SongEnded += _player_SongEnded;
+            _player.FftCalculated += _player_FftCalculated;
             _player.Volume = AppSettings.Volume;
 
             _timerDuration = new DispatcherTimer
@@ -677,6 +678,11 @@ namespace osu_Library
         private void _player_SongEnded()
         {
             NextSong(true);
+        }
+
+        private void _player_FftCalculated(object sender, FftEventArgs e)
+        {
+            spectrum.Update(e.Result);
         }
 
         private void _manager_LoadingStarted(LoadingStartedEventArgs e)
