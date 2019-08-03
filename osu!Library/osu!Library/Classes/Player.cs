@@ -37,15 +37,18 @@ namespace osu_Library.Classes
             }
             set
             {
+                if (_muted != value)
+                    MutedChanged?.Invoke(value);
+
                 _muted = value;
+                if (_muted)
+                    playbackDevice.Volume = 0;
+                else
+                    playbackDevice.Volume = _volume;
             }
         }
 
-        public delegate void SongEndedEventHandler();
-        public event SongEndedEventHandler SongEnded;
 
-        public delegate void ModeChangedEventHandler(PlayMode newMode);
-        public event ModeChangedEventHandler ModeChanged;
 
         public TimeSpan TotalTime
         {
@@ -85,19 +88,28 @@ namespace osu_Library.Classes
             {
                 _volume = value;
 
-                if (playbackDevice != null)
+                if (playbackDevice != null && !_muted)
                     playbackDevice.Volume = value;
             }
         }
 
+        public delegate void SongEndedEventHandler();
+        public event SongEndedEventHandler SongEnded;
+
+        public delegate void ModeChangedEventHandler(PlayMode newMode);
+        public event ModeChangedEventHandler ModeChanged;
+
+        public delegate void MutedChangedEventHandler(bool newValue);
+        public event MutedChangedEventHandler MutedChanged;
+
         public event EventHandler<FftEventArgs> FftCalculated;
+
+        public event EventHandler<MaxSampleEventArgs> MaximumCalculated;
 
         protected virtual void OnFftCalculated(FftEventArgs e)
         {
             FftCalculated?.Invoke(this, e);
         }
-
-        public event EventHandler<MaxSampleEventArgs> MaximumCalculated;
 
         protected virtual void OnMaximumCalculated(MaxSampleEventArgs e)
         {

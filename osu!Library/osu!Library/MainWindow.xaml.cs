@@ -107,6 +107,7 @@ namespace osu_Library
 
             _player.ModeChanged += _player_ModeChanged;
             _player.SongEnded += _player_SongEnded;
+            _player.MutedChanged += _player_MutedChanged;
             _player.FftCalculated += _player_FftCalculated;
             _player.Volume = AppSettings.Volume;
 
@@ -379,11 +380,6 @@ namespace osu_Library
         {
             if (_player != null)
                 _player.Muted = !_player.Muted;
-
-            if (_player.Muted)
-                ButtonVolume.Tag = "Muted";
-            else
-                ButtonVolume.Tag = "Unmuted";
         }
 
         private void ButtonPrevious_Click(object sender, RoutedEventArgs e)
@@ -673,6 +669,14 @@ namespace osu_Library
                     ButtonPlay.Tag = "Stop";
                     break;
             }
+        }
+
+        private void _player_MutedChanged(bool newValue)
+        {
+            if (newValue)
+                ButtonVolume.Tag = "Muted";
+            else
+                ButtonVolume.Tag = "Unmuted";
         }
 
         private void _player_SongEnded()
