@@ -12,7 +12,10 @@
         <ScrollViewer Margin="0 5 0 5" Height="Auto">
             <StackPanel Orientation="Vertical" Width="350" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0 0 0 0">
                 <Label Style="{DynamicResource LabelStyleMenuTitle}" Content="osu!Libary" HorizontalAlignment="Center" Margin="0 0 0 0"/>
-                <Label x:Name="LabelVersion" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangAboutVersion}" HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label x:Name="LabelVersion" Style="{DynamicResource LabelStyleMenu}" Content="{DynamicResource LangAboutVersion}" HorizontalAlignment="Center" Margin="0 0 5 10" FontSize="10"/>
+                    <Label x:Name="LabelVersionNumber" Style="{DynamicResource LabelStyleMenu}" HorizontalAlignment="Center" Margin="0 0 0 10" FontSize="10"/>
+                </StackPanel>
                 <TextBlock Style="{DynamicResource TextBlockStyleMenu}" Text="{DynamicResource LangAboutDescription}" HorizontalAlignment="Center" Margin="0" TextAlignment="Center"/>
                 <TextBlock Style="{DynamicResource TextBlockStyleMenu}" Text="{DynamicResource LangAboutAuthor}" HorizontalAlignment="Center" Margin="0"/>
                 <TextBlock Style="{DynamicResource TextBlockStyleMenu}" Text="{DynamicResource LangAboutLicense}" HorizontalAlignment="Center" Margin="0 20 0 10"/>

@@ -34,7 +34,7 @@ namespace osu_Library.Pages
         {
             InitializeComponent();
 
-            //LabelVersion.Content = $"Version {Assembly.GetEntryAssembly().GetName().Version}";
+            LabelVersionNumber.Content = Assembly.GetEntryAssembly().GetName().Version;
         }
 
         private void HandleLinkClick(object sender, RoutedEventArgs e)
