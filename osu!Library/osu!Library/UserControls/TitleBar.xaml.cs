@@ -68,5 +68,17 @@ namespace osu_Library.UserControls
         {
 
         }
+
+        private void ButtonGitHub_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://github.com/Laritello/osu-Library");
+            }
+            catch
+            {
+                // Do nothing for now
+            }
+        }
     }
 }

@@ -13,5 +13,6 @@
         <Label Content="osu!Library" Style="{DynamicResource LabelStyleAppTitle}" Foreground="White" MouseDown="Label_MouseDown" MouseDoubleClick="Label_MouseDoubleClick"/>
         <Button x:Name="ButtonClose" Style="{DynamicResource ButtonStyleClose}" Click="ButtonClose_Click"/>
         <Button x:Name="ButtonMinimize" Style="{DynamicResource ButtonStyleMinimize}" Click="ButtonMinimize_Click"/>
+        <Button x:Name="ButtonGitHub" Style="{DynamicResource ButtonStyleGitHub}" Click="ButtonGitHub_Click"/>
     </Grid>
 </UserControl>
