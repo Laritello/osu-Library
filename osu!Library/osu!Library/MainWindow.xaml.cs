@@ -384,7 +384,7 @@ namespace osu_Library
 
         private void ButtonPrevious_Click(object sender, RoutedEventArgs e)
         {
-            if (ListBoxSongs.Items == null)
+            if (ListBoxSongs.Items == null || ListBoxSongs.Items.Count == 0)
                 return;
 
             if (_player != null)
@@ -862,7 +862,7 @@ namespace osu_Library
 
         private void NextSong(bool repeatEnabled = false)
         {
-            if (ListBoxSongs.Items == null)
+            if (ListBoxSongs.Items == null || ListBoxSongs.Items.Count == 0)
                 return;
 
             if (_player != null)

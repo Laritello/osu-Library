@@ -41,6 +41,10 @@ namespace osu_Library.Classes
                     MutedChanged?.Invoke(value);
 
                 _muted = value;
+
+                if (playbackDevice == null)
+                    return;
+
                 if (_muted)
                     playbackDevice.Volume = 0;
                 else
@@ -196,6 +200,11 @@ namespace osu_Library.Classes
         private void CreateDevice()
         {
             playbackDevice = new WaveOut { DesiredLatency = 200 };
+
+            if (_muted)
+                playbackDevice.Volume = 0;
+            else
+                playbackDevice.Volume = _volume;
         }
 
         public void Play()
