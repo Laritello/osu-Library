@@ -86,7 +86,12 @@ namespace osu_Library.Classes
             }
             set
             {
-                _volume = value;
+                if (value > 1)
+                    _volume = 1;
+                else if (value < 0)
+                    _volume = 0;
+                else
+                    _volume = value;
 
                 if (playbackDevice != null && !_muted)
                     playbackDevice.Volume = value;
