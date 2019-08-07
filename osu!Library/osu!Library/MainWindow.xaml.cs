@@ -849,6 +849,9 @@ namespace osu_Library
         {
             try
             {
+                if (!File.Exists(_selectedSong.PathToAudio))
+                    NextSong();
+
                 _player.Load(_selectedSong.PathToAudio);
                 UpdateInformation();
                 _player.Play();
