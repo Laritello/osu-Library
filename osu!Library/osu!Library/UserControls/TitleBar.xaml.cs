@@ -66,7 +66,7 @@ namespace osu_Library.UserControls
 
         private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.MainWindow.Hide();
         }
 
         private void ButtonGitHub_Click(object sender, RoutedEventArgs e)

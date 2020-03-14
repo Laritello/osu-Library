@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:osu_Library"
         xmlns:uc="clr-namespace:osu_Library.UserControls"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
@@ -23,6 +24,8 @@
             <RowDefinition x:Name="GridRowSongList" Height="1*"/>
             <RowDefinition x:Name="GridRowBottomBar" Height="35"/>
         </Grid.RowDefinitions>
+        <tb:TaskbarIcon x:Name="TrayIcon" IconSource="/osu!Library;component/Resources/Images/App/app_logo.ico" ToolTipText="osu!Library"
+                        TrayMouseDoubleClick="TrayIcon_TrayMouseDoubleClick"/>
         <Grid x:Name="GridPlayer" Grid.Row="0">
             <Image x:Name="ImageBackground" Source="/osu!Library;component/Resources/Images/Player/player_background.jpg" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             

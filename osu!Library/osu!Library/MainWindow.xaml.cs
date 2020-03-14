@@ -581,6 +581,11 @@ namespace osu_Library
                 return;
             }
         }
+
+        private void TrayIcon_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+        }
         #endregion
 
         #region Event Handlers
