@@ -25,6 +25,11 @@
                         <TextBlock Text="NAudio .NET audio library by Mark Heath" Style="{DynamicResource TextBlockStyleLink}"/>
                     </Hyperlink>
                 </TextBlock>
+                <TextBlock Padding="15 5 5 5">
+                    <Hyperlink RequestNavigate="HandleLinkClick" NavigateUri="https://github.com/hardcodet/wpf-notifyicon" Style="{DynamicResource HyperlinkStyleAbout}">
+                        <TextBlock Text="WPF NotifyIcon by Philipp Sumi" Style="{DynamicResource TextBlockStyleLink}"/>
+                    </Hyperlink>
+                </TextBlock>
                 <TextBlock Style="{DynamicResource TextBlockStyleMenuTitle}" Text="{DynamicResource LangAboutResourcesTitle}" Margin="0 20 0 0"/>
                 <TextBlock Style="{DynamicResource TextBlockStyleMenu}" Text="{DynamicResource LangAboutResourcesDescription}"/>
                 <TextBlock Padding="15 5 5 5">
