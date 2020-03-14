@@ -1108,19 +1108,24 @@
 
         <Setter Property="Content">
             <Setter.Value>
-                <Border BorderThickness="0">
-                    <Canvas Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
-                        <Viewbox Width="23" Height="23" Canvas.Left="-1.5" Canvas.Top="-1.5">
-                            <Canvas Width="70.0592" Height="70.0592">
-                                <Canvas.Background>
-                                    <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.001"/>
-                                </Canvas.Background>
-                                <Path Width="64.0541" Height="64.0541" Canvas.Left="3.00254" Canvas.Top="3.00254" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 28.9845,12.971L 22.9794,14.9726L 16.9743,8.96758L 8.96758,16.9743L 14.9726,22.9794L 12.971,28.9845L 4.00339,28.9845L 4.00339,40.9946L 12.971,40.9946L 14.9726,46.9997L 8.96758,53.0047L 16.9743,61.0115L 22.9794,55.0064L 28.9845,57.0081L 28.9845,66.0558L 34.9895,66.0558L 40.9946,66.0558L 40.9946,57.0081L 46.9997,55.0064L 53.0048,61.0115L 61.0115,53.0047L 55.0064,46.9997L 57.0081,40.9946L 66.0558,40.9946L 66.0558,28.9845L 57.0081,28.9845L 55.0064,22.9794L 61.0115,16.9743L 53.0048,8.96758L 46.9997,14.9726L 40.9946,12.971L 40.9946,4.00338L 34.9895,4.00338L 28.9845,4.00338L 28.9845,12.971 Z "/>
-                                <Path Width="14.0118" Height="14.0118" Canvas.Left="27.9836" Canvas.Top="27.9836" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 40.9946,34.9895C 40.9946,38.2723 38.2723,40.9946 34.9895,40.9946C 31.7068,40.9946 28.9845,38.2723 28.9845,34.9895C 28.9845,31.7068 31.7068,28.9845 34.9895,28.9845C 38.2723,28.9845 40.9946,31.7068 40.9946,34.9895 Z "/>
-                            </Canvas>
-                        </Viewbox>
-                    </Canvas>
-                </Border>
+                <Image>
+                    <Image.Source>
+                        <DrawingImage>
+                            <DrawingImage.Drawing>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Geometry="F1 M 32,2C 48.5686,2 62,15.4315 62,32C 62,48.5686 48.5685,62 32,62C 15.4315,62 2,48.5686 2,32C 2,15.4315 15.4315,2 32,2 Z ">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="4" LineJoin="Round" Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"/>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Geometry="F1 M 32,38.4124C 28.464,38.4124 25.5876,35.536 25.5876,32C 25.5876,28.464 28.464,25.5876 32,25.5876C 35.536,25.5876 38.4125,28.464 38.4125,32C 38.4125,35.536 35.536,38.4124 32,38.4124 Z M 45.6127,33.7955C 45.6859,33.2092 45.7409,32.6229 45.7409,32C 45.7409,31.3771 45.6859,30.7908 45.6127,30.2045L 49.4784,27.1815C 49.8265,26.9067 49.9181,26.412 49.6983,26.009L 46.0341,19.6699C 45.8142,19.2668 45.3195,19.1202 44.9164,19.2668L 40.3545,21.0989C 39.4017,20.366 38.3758,19.7615 37.2582,19.3034L 36.562,14.4483C 36.507,14.0086 36.1223,13.6788 35.6642,13.6788L 28.3358,13.6788C 27.8777,13.6788 27.493,14.0086 27.438,14.4483L 26.7418,19.3034C 25.6242,19.7615 24.5983,20.3844 23.6455,21.0989L 19.0836,19.2668C 18.6622,19.1019 18.1858,19.2668 17.966,19.6699L 14.3017,26.009C 14.0636,26.412 14.1735,26.9067 14.5216,27.1815L 18.3874,30.2045C 18.3141,30.7908 18.2591,31.3954 18.2591,32C 18.2591,32.6046 18.3141,33.2092 18.3874,33.7955L 14.5216,36.8185C 14.1735,37.0933 14.0819,37.588 14.3017,37.9911L 17.966,44.3302C 18.1858,44.7332 18.6805,44.8798 19.0836,44.7332L 23.6455,42.9011C 24.5983,43.634 25.6242,44.2386 26.7418,44.6966L 27.438,49.5517C 27.493,49.9914 27.8777,50.3212 28.3358,50.3212L 35.6643,50.3212C 36.1223,50.3212 36.507,49.9914 36.562,49.5517L 37.2582,44.6966C 38.3758,44.2386 39.4017,43.6156 40.3545,42.9011L 44.9164,44.7332C 45.3379,44.8981 45.8142,44.7332 46.0341,44.3302L 49.6983,37.9911C 49.9181,37.588 49.8265,37.0933 49.4784,36.8185L 45.6127,33.7955 Z "/>
+                                    </DrawingGroup.Children>
+                                </DrawingGroup>
+                            </DrawingImage.Drawing>
+                        </DrawingImage>
+                    </Image.Source>
+                </Image>
             </Setter.Value>
         </Setter>
 
@@ -1180,22 +1185,33 @@
 
         <Setter Property="Content">
             <Setter.Value>
-                <Border BorderThickness="0">
-                    <Canvas Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
-                        <Viewbox Width="23" Height="23" Canvas.Left="-2.5" Canvas.Top="-1.5">
-                            <Canvas Width="76.0642" Height="76.0642">
-                                <Canvas.Background>
-                                    <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.001"/>
-                                </Canvas.Background>
-                                <Path Width="64.014" Height="64.014" Canvas.Left="6.02509" Canvas.Top="6.02509" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 59.9706,16.0936C 72.0608,28.1838 72.0608,47.8804 59.9706,59.9706C 47.8804,72.0608 28.1838,72.0608 16.0936,59.9706C 4.00339,47.8804 4.00339,28.1838 16.0936,16.0936C 28.1838,4.00339 47.8804,4.00339 59.9706,16.0936 Z "/>
-                                <Path Width="0" Height="22.0186" Canvas.Left="38.0321" Canvas.Top="22.9794" Stretch="Fill" Fill="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 38.0321,22.9794L 38.0321,44.998L 38.0321,22.9794 Z "/>
-                                <Path Width="2.00169" Height="24.0203" Canvas.Left="37.0313" Canvas.Top="21.9786" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 38.0321,22.9794L 38.0321,44.998"/>
-                                <Path Width="0" Height="4.00338" Canvas.Left="38.0321" Canvas.Top="49.0014" Stretch="Fill" Fill="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 38.0321,49.0014L 38.0321,53.0048L 38.0321,49.0014 Z "/>
-                                <Path Width="2.00169" Height="6.00507" Canvas.Left="37.0313" Canvas.Top="48.0005" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 38.0321,49.0014L 38.0321,53.0048"/>
-                            </Canvas>
-                        </Viewbox>
-                    </Canvas>
-                </Border>
+                <Image>
+                    <Image.Source>
+                        <DrawingImage>
+                            <DrawingImage.Drawing>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Geometry="F1 M 32,2C 48.5686,2 62,15.4315 62,32C 62,48.5685 48.5685,62 32,62C 15.4315,62 2,48.5685 2,32C 2,15.4315 15.4315,2 32,2 Z ">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="4" LineJoin="Round" Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"/>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Geometry="F1 M 32,14L 32,18">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="4" LineJoin="Round" Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"/>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Geometry="F1 M 32.0004,50L 32.0004,22">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="4" LineJoin="Round" Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"/>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                    </DrawingGroup.Children>
+                                </DrawingGroup>
+                            </DrawingImage.Drawing>
+                        </DrawingImage>
+                    </Image.Source>
+                </Image>
             </Setter.Value>
         </Setter>
 
@@ -1255,21 +1271,24 @@
 
         <Setter Property="Content">
             <Setter.Value>
-                <Border BorderThickness="0">
-                    <Canvas Width="20" Height="20" Canvas.Left="0" Canvas.Top="0">
-                        <Viewbox Width="23" Height="23" Canvas.Left="-1.5" Canvas.Top="-1.5">
-                            <Canvas Width="75.744" Height="70.0592">
-                                <Canvas.Background>
-                                    <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.001"/>
-                                </Canvas.Background>
-                                <Path Width="32.0521" Height="56.0473" Canvas.Left="37.8319" Canvas.Top="3.00254" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 38.8328,4.00338C 46.5193,4.00338 54.2058,6.88582 60.1308,12.7308C 70.7798,23.4598 71.7406,40.274 62.8531,52.0439L 56.848,58.049"/>
-                                <Path Width="31.9852" Height="56.1274" Canvas.Left="5.84677" Canvas.Top="10.9292" Stretch="Fill" StrokeThickness="3.00169" StrokeMiterLimit="2.75" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 36.8311,66.0558C 29.1446,66.0558 21.5382,63.0933 15.6132,57.2483C 4.9642,46.5193 4.00339,29.7051 12.8108,18.0152L 18.8159,11.9301"/>
-                                <Path Width="13.051" Height="13.051" Canvas.Left="55.8472" Canvas.Top="45.9988" Stretch="Fill" StrokeThickness="3.00169" StrokeLineJoin="Bevel" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 56.848,46.9997L 56.848,58.049L 67.8973,58.049"/>
-                                <Path Width="12.971" Height="12.971" Canvas.Left="6.84579" Canvas.Top="11.0093" Stretch="Fill" StrokeThickness="3.00169" StrokeLineJoin="Bevel" Stroke="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Data="F1 M 18.8159,22.9794L 18.8159,12.0102L 7.84663,12.0102"/>
-                            </Canvas>
-                        </Viewbox>
-                    </Canvas>
-                </Border>
+                <Image>
+                    <Image.Source>
+                        <DrawingImage>
+                            <DrawingImage.Drawing>
+                                <DrawingGroup>
+                                    <DrawingGroup.Children>
+                                        <GeometryDrawing Geometry="F1 M 35,5C 51.5686,5 65,18.4315 65,35C 65,51.5686 51.5685,65 35,65C 18.4315,65 5,51.5686 5,35C 5,18.4315 18.4315,5 35,5 Z ">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="4" LineJoin="Round" Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}"/>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="{Binding (Button.Foreground),RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}" Geometry="F1 M 48.7566,21.2312C 45.2352,17.6976 40.3735,15.5043 34.9878,15.5043C 24.2165,15.5043 15.5165,24.2287 15.5165,35C 15.5165,45.7714 24.2165,54.4957 34.9878,54.4957C 44.0655,54.4957 51.6688,48.2815 53.8255,39.8739L 48.7566,39.8739C 46.7462,45.5521 41.3605,49.6218 34.9878,49.6218C 26.9092,49.6218 20.366,43.0786 20.366,35C 20.366,26.9215 26.9092,20.3782 34.9878,20.3782C 39.021,20.3782 42.6399,22.0597 45.284,24.7038L 37.4247,32.5631L 54.4835,32.5631L 54.4835,15.5043L 48.7566,21.2312 Z "/>
+                                    </DrawingGroup.Children>
+                                </DrawingGroup>
+                            </DrawingImage.Drawing>
+                        </DrawingImage>
+                    </Image.Source>
+                </Image>
             </Setter.Value>
         </Setter>
 
