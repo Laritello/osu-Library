@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -20,6 +21,7 @@ namespace osu_Library.UserControls
     /// </summary>
     public partial class SpectrumAnalyzerItem : UserControl
     {
+        private double _movementSpeed = 15;
         public int Value
         {
             get
@@ -38,15 +40,31 @@ namespace osu_Library.UserControls
         private static void ValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = d as SpectrumAnalyzerItem;
+            int newValue = (int)e.NewValue;
 
-            double percentage = (int)e.NewValue / 255.0;
+            if (newValue < 0 || newValue > 255)
+                throw new ArgumentException("SpectrumAnalyzerItem value can't be less than 0 and more than 255.");
 
-            control.rcMain.Height = control.ActualHeight * percentage;
+            double distance = Math.Abs(control.rcMain.ActualHeight - control.ActualHeight * newValue / 255.0);
+            double time = distance / control._movementSpeed;
+            double speed = Math.Sign(control.ActualHeight * newValue / 255.0 - control.rcMain.ActualHeight) / 0.1;
+
+            if (distance == 0)
+                return;
+
+            var animation = new DoubleAnimation
+            {
+                By = speed,
+                Duration = TimeSpan.FromSeconds(0.1)
+            };
+
+            control.rcMain.BeginAnimation(Rectangle.HeightProperty, animation);
         }
 
         public SpectrumAnalyzerItem()
         {
             InitializeComponent();
+            rcMain.Height = 0;
         }
     }
 }
