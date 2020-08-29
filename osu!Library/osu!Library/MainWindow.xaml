@@ -30,7 +30,7 @@
             <Image x:Name="ImageBackground" Source="/osu!Library;component/Resources/Images/Player/player_background.jpg" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             
             <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="0 0 0 40">
-                <uc:SpectrumAnalyzer x:Name="spectrum" Height="50"/>
+                <uc:SpectrumAnalyzer x:Name="spectrum" Height="50" Visibility="Hidden"/>
                 <StackPanel Orientation="Vertical"  VerticalAlignment="Bottom">
                     <StackPanel.Background>
                         <SolidColorBrush Color="{DynamicResource ColorBackground}" Opacity="0.7"/>
