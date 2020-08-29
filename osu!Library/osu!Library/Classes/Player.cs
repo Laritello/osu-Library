@@ -98,7 +98,7 @@ namespace osu_Library.Classes
                     _volume = value;
 
                 if (playbackDevice != null && !_muted)
-                    playbackDevice.Volume = value;
+                    playbackDevice.Volume = _volume;
             }
         }
 
